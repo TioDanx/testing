@@ -1,6 +1,6 @@
 import "./Widget.css";
 
-function Icono() {
+function Widget() {
   return (
     <div className="icono">
       <i className="fas fa-shopping-cart"></i>
@@ -8,4 +8,4 @@ function Icono() {
   );
 }
 
-export default Icono;
+export default Widget;
