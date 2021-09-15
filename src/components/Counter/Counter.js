@@ -18,9 +18,9 @@ const Counter = ({initial, stock, onAdd}) => {
     return (
         <div className='container counter mt-3 '>
             <div className='d-flex align-items-center justify-content-center mb1'>
-            <i className="far fa-minus-square counterButton" onClick={removeItem}></i>
+            <button className="far fa-minus-square counterButton" onClick={removeItem}>-</button>
             <span className="counterAmount">{items}</span>
-            <i className="far fa-plus-square counter Button" onClick={addItems}></i>
+            <button className="far fa-plus-square counter Button" onClick={addItems}>+</button>
             </div>
            <div className='botonA'> <button className='btn btn-secondary w-100' onClick={() => onAdd(items)}>Agregar al carro</button></div>
         </div>

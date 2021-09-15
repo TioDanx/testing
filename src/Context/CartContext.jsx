@@ -8,7 +8,9 @@ const CartProvider = ({ children }) => {
 
   const [cart, setCart] = useState([]);
 
-  const addItem = (item, cantidad) => console.log("Hola, soy el CartContext, recibo este item:", item, "y recibi esta cantidad:", cantidad);
+  const addItem = (item, qnt) => {
+    setCart([...cart, {item, qnt}])
+  }
 
   const removeItem = (id) => {};
 

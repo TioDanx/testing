@@ -1,16 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import "./ItemDetail.css";
 import Counter from "../Counter/Counter";
 import { useCartContext } from "../../Context/CartContext";
+import { Link } from "react-router-dom";
+
 
 const ItemDetail = ({ item }) => {
   
   const { addItem } = useCartContext()
+  const [buttonIsClicked, setButtonIsClicked] = useState(false)
 
   const { name, img, price, description, stock } = item
 
   const handleAdd = (count) => {
     addItem(item, count)
+    setButtonIsClicked(true)
   }
 
   return (
@@ -35,7 +39,7 @@ const ItemDetail = ({ item }) => {
             <p>
               <b>Stock</b>: {stock}
             </p>
-            <Counter initial={1} stock={10} onAdd={handleAdd} />
+            { buttonIsClicked ? <Link to="/cart">Terminar compra</Link> : <Counter initial={1} stock={10} onAdd={handleAdd} /> }
           </div>
         </div>
       </div>

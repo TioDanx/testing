@@ -19,7 +19,7 @@ const ItemListContainer = () => {
       querySnapshot.docs.map( doc => itemsAux.push({ id: doc.id, ...doc.data() }) )
       setItems(itemsAux)
       console.log(items)
-    } )
+    })
   }, []);
 
   return (
